@@ -10,7 +10,7 @@ import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 import VideoPlayer from "./components/VideoPlayer";
 
-const YOUTUBE_API_KEY = "AIzaSyAym2fmoAMm36_mgdkYgQjbJVceIuXPNkE";
+const YOUTUBE_API_KEY = require("./secret");
 const ROOT_URL = "https://www.googleapis.com/youtube/v3/search";
 
 const Div = styled.div`
