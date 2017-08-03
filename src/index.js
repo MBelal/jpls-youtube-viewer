@@ -10,8 +10,10 @@ import SearchBar from "./components/SearchBar";
 import VideoList from "./components/VideoList";
 import VideoPlayer from "./components/VideoPlayer";
 
-const YOUTUBE_API_KEY = require("./secret");
-const ROOT_URL = "https://www.googleapis.com/youtube/v3/search";
+// const YOUTUBE_API_KEY = require("./secret");
+// const ROOT_URL = "https://www.googleapis.com/youtube/v3/search";
+const ROOT_URL =
+  "https://localhost:5000/jpls-youtube-viewer/us-central1/helloWorld";
 
 const Div = styled.div`
   background: #fefefe;
@@ -38,9 +40,8 @@ class App extends Component {
       .get(ROOT_URL, {
         params: {
           part: "snippet",
-          key: YOUTUBE_API_KEY,
-          q: term,
-          type: "video"
+          type: "video",
+          q: term
         }
       })
       .then(response => {
