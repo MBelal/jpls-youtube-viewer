@@ -13,7 +13,7 @@ import VideoPlayer from "./components/VideoPlayer";
 // const YOUTUBE_API_KEY = require("./secret");
 // const ROOT_URL = "https://www.googleapis.com/youtube/v3/search";
 const ROOT_URL =
-  "https://localhost:5000/jpls-youtube-viewer/us-central1/helloWorld";
+  "https://us-central1-jpls-youtube-viewer.cloudfunctions.net/helloWorld";
 
 const Div = styled.div`
   background: #fefefe;
@@ -39,15 +39,14 @@ class App extends Component {
     axios
       .get(ROOT_URL, {
         params: {
-          part: "snippet",
-          type: "video",
           q: term
         }
       })
       .then(response => {
+        // console.log(response);
         this.setState({
-          videos: response.data.items,
-          activeVideo: response.data.items[0]
+          videos: response.data,
+          activeVideo: response.data[0]
         });
       });
   }

@@ -60,3 +60,4 @@ typings/
 build
 coverage
 secret.js
+yarn.lock
