@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-snapshot";
 import styled from "styled-components";
 import axios from "axios";
 import debounce from "lodash/debounce";
@@ -80,4 +80,4 @@ class App extends Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+render(<App />, document.getElementById("root"));
